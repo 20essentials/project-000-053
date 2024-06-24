@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 300vh;
+  background-image: repeating-linear-gradient(to right bottom, #004c99 0% 10%, #a60042 10% 20%);
+}
+
+.center {
+  width: 340px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .clip {
+    position: absolute;
+    background-color: #f1f1f1;
+    z-index: 1000;
+    animation: girar auto linear;
+    animation-timeline: scroll(y nearest);
+  }
+
+  .clip1 {
+    top: 28.5px;
+    right: 47.4px;
+    width: 36%;
+    height: 112.5px;
+    background-image: repeating-linear-gradient(to right, #ffee00 0 10px, #dc002c 10px 20px);
+    clip-path: polygon(0 15.5%,
+        7% 15%,
+        9% 15%,
+        9% 15%,
+        16% 13.5%,
+        21% 12%,
+        27% 10%,
+        41.6% 2.8%,
+        42% 2.8%,
+        53% 8.6%,
+        53% 8.6%,
+        68% 12.8%,
+        68% 12.6%,
+        88% 13.3%,
+        99% 12.8%,
+        92% 30%,
+        88% 53%,
+        88% 64%,
+        88% 64%,
+        90% 80%,
+        96% 100%,
+        0 100%);
+  }
+
+
+  .clip2 {
+    width: 260px;
+    height: 117px;
+    bottom: 47px;
+    left: 40.5px;
+    border-radius: 2px 2px 94px 94px;
+    border: 2px solid black;
+    background-image: repeating-linear-gradient(to right, #004c99 0% 10%, #a60042 10% 20%);
+  }
+
+  .fotin {
+    position: absolute;
+    width: 4.5rem;
+    bottom: 70px;
+    left: 134px;
+    z-index: 1001;
+  }
+
+}
+
+@keyframes girar {
+  0% {
+    background-position: 0px;
+  }
+
+  100% {
+    background-position: 400px;
+  }
+}
+
+@media (width <=1200px) {
+  .center {
+    transform: translate(-50%, -50%) scale(.5);
+  }
+}
